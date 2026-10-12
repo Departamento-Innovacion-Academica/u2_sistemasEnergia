@@ -12,8 +12,8 @@
 *{box-sizing:border-box}
 body{margin:0;background:transparent;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
 .wrap{max-width:1500px;margin:auto;padding:12px}
-.stage{position:relative;width:100%;aspect-ratio:1445/1024;min-height:500px;overflow:hidden;background:#fff}
-svg.diagram{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.stage{position:relative;width:100%;aspect-ratio:1445/1024;height:auto;min-height:0;overflow:visible;background:#fff}
+svg.diagram{display:block;position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1445/1024;overflow:visible}
 .wires{fill:none;stroke:#444;stroke-width:2.7;stroke-linecap:square;stroke-linejoin:round}
 .wire{stroke-dasharray:1800;stroke-dashoffset:1800;animation:draw 1.1s ease forwards;animation-delay:var(--d,0s)}
 .wire.green{stroke:#38863C;stroke-width:4}
@@ -31,7 +31,7 @@ button:hover{transform:translateY(-2px);background:#68245D}
 button:focus-visible{outline:3px solid #C7A4C1;outline-offset:3px}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes nodeIn{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
-@media(max-width:650px){.wrap{padding:4px}.stage{min-height:0}.actions{margin-top:8px}button{padding:10px 14px;font-size:12px}}
+@media(max-width:650px){.wrap{padding:4px}.stage{min-height:0;width:100%;aspect-ratio:1445/1024}.actions{margin-top:8px}button{padding:10px 14px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
