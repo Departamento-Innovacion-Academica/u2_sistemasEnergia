@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercados de energía eléctrica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#44113C;--plum-light:#F5ECF4;--ink:#191619;--muted:#776D77;--line:#E5DDE4}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',Arial,sans-serif}
+.wrap{width:100%;max-width:1500px;margin:auto;padding:clamp(12px,2vw,24px)}
+.instruction{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:0 2px 17px auto;color:var(--muted);font-size:clamp(11px,1vw,13px);line-height:1.5;text-align:right}
+.instruction svg{width:17px;height:17px;flex:none;stroke:var(--plum);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px);perspective:1400px}
+.card{appearance:none;display:block;width:100%;min-width:0;min-height:500px;padding:0;border:0;border-radius:3px;background:transparent;color:inherit;text-align:inherit;font:inherit;cursor:pointer;perspective:1200px;opacity:0;transform:translateY(18px);animation:enter .65s cubic-bezier(.2,.75,.25,1) forwards;animation-delay:var(--delay)}
+.card-inner{position:relative;min-height:500px;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.75,.25,1)}
+.card[aria-pressed="true"] .card-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid #D9D4D8;box-shadow:0 12px 28px rgba(34,18,32,.08);background:#fff;overflow:hidden}
+.front{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:clamp(22px,3vw,42px);border-top:12px solid var(--plum)}
+.front:before{content:"";position:absolute;top:-45px;left:50%;transform:translateX(-50%);width:78px;height:78px;border-radius:50%;background:var(--plum)}
+.front h2{font-size:clamp(20px,2vw,29px);line-height:1.35;letter-spacing:-.025em;font-weight:600;margin:10px 0 18px;max-width:540px}
+.front .subtitle{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum);font-weight:600}
+.front .tap{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:9px 14px;background:var(--plum-light);border-radius:999px;color:var(--plum);font-size:11px;font-weight:600}
+.tap svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.back{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(22px,3vw,42px);border-top:12px solid var(--plum)}
+.back .eyebrow{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--plum);background:var(--plum-light);padding:7px 10px;border-radius:999px;margin-bottom:15px}
+.back h2{font-size:clamp(18px,1.7vw,24px);line-height:1.35;font-weight:600;color:var(--plum);margin:0 0 14px}
+.back p{font-size:clamp(12px,1.15vw,15px);line-height:1.85;color:#393139;margin:0;max-width:650px}
+.back .reference{font-size:12px;font-weight:600;margin-top:13px;color:var(--plum)}
+.back .flipback{display:inline-flex;align-items:center;gap:7px;margin-top:20px;color:var(--plum);font-size:11px;font-weight:600}
+.flipback svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card:hover .face{box-shadow:0 18px 38px rgba(68,17,60,.14);border-color:#C6B2C4}
+.card:focus-visible{outline:3px solid #BFA0BA;outline-offset:5px}
+.controls{display:flex;justify-content:center;margin-top:17px}
+button.replay{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;background:var(--plum);color:white;padding:12px 19px;font:600 12px 'Poppins',Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(68,17,60,.18);transition:transform .2s,background .2s}
+button.replay:hover{background:#68245D;transform:translateY(-2px)}
+button.replay:focus-visible{outline:3px solid #BFA0BA;outline-offset:4px}
+button.replay svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes enter{to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.wrap{padding:10px}.cards{grid-template-columns:1fr;gap:13px}.card,.card-inner{min-height:430px}.front h2{font-size:23px}.back{padding:24px}.back p{font-size:13px;line-height:1.75}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="instruction"><svg viewBox="0 0 24 24"><path d="M8 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5a7 7 0 0 1-7 7h-1a7 7 0 0 1-5-2l-3-3a2 2 0 0 1 3-3l2 2"/></svg>Haga clic sobre cada tarjeta para ampliar la información.</div>
+  <section class="cards" aria-label="Mercados de energía eléctrica">
+    <button class="card" type="button" aria-pressed="false" style="--delay:.08s" aria-label="Ampliar información sobre mercado de contratos bilaterales">
+      <div class="card-inner">
+        <div class="face front"><span class="subtitle">Mercado eléctrico · 01</span><h2>Mercado de contratos bilaterales</h2><span class="tap"><svg viewBox="0 0 24 24"><path d="M8 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5a7 7 0 0 1-7 7h-1a7 7 0 0 1-5-2l-3-3a2 2 0 0 1 3-3l2 2"/></svg>Girar para descubrir</span></div>
+        <div class="face back"><span class="eyebrow">Contratos de mediano y largo plazo</span><h2>Mercado de contratos bilaterales</h2><p>El mercado de contratos bilaterales representa aproximadamente el 80 % de las transacciones totales y consiste en acuerdos de compraventa de energía a mediano y largo plazo (típicamente entre 1 y 5 años) entre generadores y comercializadores. Estos contratos son de naturaleza financiera y tienen como objetivo principal la mitigación de riesgos asociados a la volatilidad de precios en el mercado de corto plazo.</p><span class="reference">Resolución 101, 2023</span><span class="flipback">Volver a la tarjeta <svg viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span></div>
+      </div>
+    </button>
+    <button class="card" type="button" aria-pressed="false" style="--delay:.2s" aria-label="Ampliar información sobre mercado spot o bolsa de energía">
+      <div class="card-inner">
+        <div class="face front"><span class="subtitle">Mercado eléctrico · 02</span><h2>Mercado spot o bolsa de energía</h2><span class="tap"><svg viewBox="0 0 24 24"><path d="M8 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5a7 7 0 0 1-7 7h-1a7 7 0 0 1-5-2l-3-3a2 2 0 0 1 3-3l2 2"/></svg>Girar para descubrir</span></div>
+        <div class="face back"><span class="eyebrow">Transacciones de corto plazo</span><h2>Mercado spot o bolsa de energía</h2><p>El mercado spot o bolsa de energía, por su parte, es un mecanismo de corto plazo donde se realizan transacciones horarias. Los generadores presentan diariamente ofertas de disponibilidad y precio para cada hora del día siguiente, y el operador del sistema (XM) determina el despacho ideal mediante un algoritmo de optimización que busca minimizar el costo total de operación. Este despacho establece un precio único para todo el sistema en cada hora, conocido como precio de bolsa, que corresponde al precio ofertado por el último recurso despachado para atender la demanda.</p><span class="reference">Resolución 101, 2023</span><span class="flipback">Volver a la tarjeta <svg viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span></div>
+      </div>
+    </button>
+  </section>
+  <div class="controls"><button class="replay" id="replay" type="button"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M19 12a7.5 7.5 0 1 1-2-5.1L20 12"/></svg>Volver a ver la animación</button></div>
+</main>
+<script>
+(function(){
+ const cards=[...document.querySelectorAll('.card')];
+ cards.forEach(card=>card.addEventListener('click',()=>{
+   const open=card.getAttribute('aria-pressed')!=='true';
+   card.setAttribute('aria-pressed',String(open));
+   card.setAttribute('aria-label',open?'Mostrar solo el título: '+card.querySelector('.front h2').textContent:'Ampliar información sobre '+card.querySelector('.front h2').textContent);
+ }));
+ document.getElementById('replay').addEventListener('click',()=>{
+   cards.forEach(card=>{card.style.animation='none';card.style.opacity='0';});
+   void document.body.offsetWidth;
+   requestAnimationFrame(()=>cards.forEach((card,i)=>{
+     card.setAttribute('aria-pressed','false');card.style.animation='';card.style.opacity='';card.style.animationDelay=(.08+i*.12)+'s';
+   }));
+ });
+})();
+</script>
+</body>
+</html>
