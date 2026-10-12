@@ -10,8 +10,8 @@
 <style>
 :root{--plum:#44113C;--plum2:#68245D;--pale:#F5ECF4;--ink:#211D22;--muted:#766D76;--line:#E8E2E7}
 *{box-sizing:border-box}
-body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',Arial,sans-serif}
-.wrap{width:100%;max-width:1500px;margin:auto;padding:clamp(10px,2vw,22px)}
+body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.wrap{width:100%;max-width:1500px;margin:auto;padding:clamp(10px,2vw,22px);flex:0 1 auto}
 .table-shell{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 28px rgba(48,24,45,.06)}
 table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0}
 thead th{background:var(--plum);color:#fff;text-align:left;font-size:clamp(11px,1.1vw,15px);font-weight:600;line-height:1.55;padding:17px 15px;border-right:1px solid rgba(255,255,255,.3);opacity:0;transform:translateY(-12px);animation:headIn .55s ease forwards;animation-delay:var(--hd,0s)}
@@ -28,6 +28,7 @@ button.replay:hover{background:var(--plum2);transform:translateY(-2px)}button.re
 button.replay svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 @keyframes headIn{to{opacity:1;transform:translateY(0)}}@keyframes rowIn{to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){
+ body{min-height:100vh;align-items:center}
  .wrap{padding:8px}.table-shell{border:0;box-shadow:none;background:transparent;overflow:visible}
  table,tbody{display:block;width:100%}thead{display:none}
  tbody{display:grid;grid-template-columns:1fr;gap:12px}
