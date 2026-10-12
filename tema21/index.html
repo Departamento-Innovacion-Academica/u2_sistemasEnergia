@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actores institucionales del sector energético</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#44113C;--plum2:#68245D;--soft:#F5EEF4;--line:#E6DDE5;--ink:#211C22;--muted:#716672}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',sans-serif}
+.app{max-width:1250px;margin:auto;padding:clamp(12px,2vw,24px)}
+.intro{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:0 0 17px}
+.intro-copy{font-size:12px;color:var(--muted);line-height:1.6}
+.intro-meta{display:flex;flex-direction:column;align-items:flex-end;gap:7px;max-width:330px}.instruction{font-size:11px;line-height:1.5;color:var(--plum);text-align:right;font-weight:500}.progress{font-size:11px;font-weight:600;color:var(--plum);background:var(--soft);padding:8px 12px;border-radius:999px;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.8fr);gap:18px;align-items:stretch;min-height:410px}
+.nav{display:flex;flex-direction:column;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:11px;text-align:left;width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);font:500 12px/1.45 'Poppins',sans-serif;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.nav-btn:hover{transform:translateX(3px);border-color:#C9B2C7}
+.nav-btn[aria-selected="true"]{background:var(--plum);color:#fff;border-color:var(--plum);box-shadow:0 6px 17px rgba(68,17,60,.16)}
+.num{display:grid;place-items:center;width:30px;height:30px;flex:0 0 30px;border-radius:9px;background:var(--soft);color:var(--plum);font-size:10px;font-weight:700}
+.nav-btn[aria-selected="true"] .num{background:rgba(255,255,255,.17);color:#fff}
+.panel{position:relative;min-width:0;border:1px solid var(--line);border-radius:18px;background:#fff;padding:clamp(20px,3vw,34px);box-shadow:0 10px 30px rgba(48,23,45,.07);overflow:hidden;display:flex;flex-direction:column;justify-content:center;animation:panelIn .5s ease both}
+.panel:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--plum)}
+.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}
+.kicker{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--plum);background:var(--soft);padding:6px 9px;border-radius:7px;margin-bottom:10px}
+.panel h2{font-size:clamp(20px,2.3vw,29px);line-height:1.3;letter-spacing:-.035em;margin:0;color:var(--plum);font-weight:600}
+.symbol{width:48px;height:48px;flex:0 0 48px;border-radius:15px;display:grid;place-items:center;background:var(--soft);color:var(--plum)}
+.symbol svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.description{font-size:clamp(13px,1.25vw,15px);line-height:1.85;color:#39313B;margin:0}
+.reference{font-size:11px;color:var(--muted);border-top:1px solid #F0E9F0;padding-top:14px;margin-top:18px}
+.panel-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:23px}
+.dots{display:flex;gap:6px;align-items:center}
+.dot{width:7px;height:7px;border-radius:20px;background:#D9CDD8;border:0;padding:0;cursor:pointer;transition:width .2s,background .2s}
+.dot.active{width:23px;background:var(--plum)}
+.arrows{display:flex;gap:8px}
+.arrow{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--plum);font:500 11px 'Poppins',sans-serif;cursor:pointer;transition:background .2s,color .2s,border .2s}
+.arrow:hover:not(:disabled){background:var(--plum);border-color:var(--plum);color:white}
+.arrow:disabled{opacity:.35;cursor:not-allowed}
+.arrow svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hint{margin:12px 0 0;font-size:10px;color:#958895;text-align:center}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){.app{padding:10px}.intro{align-items:flex-start}.intro-meta{max-width:55%}.instruction{font-size:10px}.layout{grid-template-columns:1fr;gap:12px;min-height:0}.nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.nav-btn{padding:9px;font-size:10px;gap:7px}.num{width:25px;height:25px;flex-basis:25px}.panel{min-height:330px;padding:23px 19px 20px 24px}.panel h2{font-size:22px}.panel-head{margin-bottom:12px}.symbol{width:40px;height:40px;flex-basis:40px}.description{font-size:13px;line-height:1.75}.panel-actions{margin-top:18px}.arrow{padding:9px 10px}.hint{margin-top:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="intro">
+    <div class="intro-copy">Explora los actores que orientan, regulan y coordinan el sector energético colombiano.<br>Selecciona cada institución para conocer su función.</div>
+    <div class="intro-meta"><span class="instruction">Haga clic sobre cada botón para ampliar la información.</span><span class="progress" id="progress">01 / 05</span></div>
+  </div>
+  <section class="layout" aria-label="Explorador interactivo de instituciones">
+    <nav class="nav" id="nav" role="tablist" aria-label="Instituciones">
+      <button class="nav-btn" role="tab" aria-selected="true" aria-controls="detail" data-index="0"><span class="num">01</span><span>Dirección · MinEnergía</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="detail" data-index="1"><span class="num">02</span><span>Regulación · CREG</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="detail" data-index="2"><span class="num">03</span><span>Control · SSPD</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="detail" data-index="3"><span class="num">04</span><span>Operación · CNO y XM</span></button>
+      <button class="nav-btn" role="tab" aria-selected="false" aria-controls="detail" data-index="4"><span class="num">05</span><span>Asesoría · CAC y CAPT</span></button>
+    </nav>
+    <article class="panel" id="detail" role="tabpanel" tabindex="0" aria-live="polite">
+      <div class="panel-head">
+        <div><span class="kicker" id="kicker">Dirección estratégica</span><h2 id="title">Dirección — MinEnergía</h2></div>
+        <div class="symbol" id="symbol" aria-hidden="true"></div>
+      </div>
+      <p class="description" id="description"></p>
+      <div class="reference" id="reference"></div>
+      <div class="panel-actions">
+        <div class="dots" id="dots" aria-label="Seleccionar institución"></div>
+        <div class="arrows">
+          <button class="arrow" id="prev" type="button"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Anterior</button>
+          <button class="arrow" id="next" type="button">Siguiente<svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </article>
+  </section>
+  <p class="hint">Usa las pestañas, los indicadores o las flechas para navegar por el esquema.</p>
+</main>
+<script>
+(function(){
+ const data=[
+  {title:'Dirección — MinEnergía',kicker:'Dirección estratégica',icon:'<svg viewBox="0 0 24 24"><path d="M12 3 3.5 7.5 12 12l8.5-4.5L12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5M3.5 16.5 12 21l8.5-4.5"/></svg>',description:'El Ministerio de Minas y Energía (MinEnergía) tiene la responsabilidad de formular, adoptar, dirigir y coordinar las políticas públicas del sector energético. Bajo su dirección se encuentra la Unidad de Planeación Minero Energética (UPME), entidad técnica encargada de la planificación integrada del sector minero-energético, la generación de información especializada y la elaboración de planes indicativos como el Plan de Expansión de Referencia Generación-Transmisión y el Plan Energético Nacional.',reference:'Referencia: Minenergía, 2024.'},
+  {title:'Regulación — CREG',kicker:'Regulación del mercado',icon:'<svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-4 8h8L7 7zm10 0-4 8h8l-4-8zM8 21h8"/></svg>',description:'En el ámbito regulatorio, la Comisión de Regulación de Energía y Gas (CREG) actúa como el ente técnico independiente que establece las reglas de juego del mercado eléctrico. Define los criterios de eficiencia y desarrollo del mercado, determina las metodologías tarifarias y establece reglamentos para garantizar la disponibilidad de una oferta energética eficiente. Su composición colegiada incluye representantes ministeriales y expertos comisionados independientes, con el fin de equilibrar la visión política con criterios técnicos.',reference:'Referencia: Resolución 101, 2023.'},
+  {title:'Control y Vigilancia — SSPD',kicker:'Supervisión y protección',icon:'<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>',description:'La función de vigilancia y control corresponde a la Superintendencia de Servicios Públicos Domiciliarios (SSPD), que supervisa el cumplimiento de la normatividad por parte de los agentes del sector, protege los derechos de los usuarios y puede intervenir en las empresas que incumplan sus obligaciones reglamentarias. La SSPD administra, además, el Sistema Único de Información (SUI), repositorio oficial de datos del sector.',reference:'Referencia: Superservicios, 2024.'},
+  {title:'Operación — CNO y XM',kicker:'Coordinación operativa',icon:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="m7 6.5 3 4m7-4-3 4m-7 7 3-4m7 4-3-4"/></svg>',description:'El Consejo Nacional de Operación (CNO) es un organismo consultivo que acuerda los aspectos técnicos para garantizar la operación segura, confiable y económica del Sistema Interconectado Nacional (SIN). Paralelamente, el operador del sistema y administrador del mercado XM tiene la responsabilidad de planear y coordinar la operación de los recursos del SIN, administrar el sistema de intercambios comerciales y liquidar y facturar los intercambios resultantes en el mercado mayorista.',reference:'Referencia: XM, 2024.'},
+  {title:'Organismos Asesores — CAC y CAPT',kicker:'Asesoría especializada',icon:'<svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M9 12h6M9 15h6"/></svg>',description:'El Comité Asesor de Comercialización (CAC) realiza seguimiento al funcionamiento del mercado mayorista y recomienda ajustes. El Comité Asesor de Planeamiento de la Transmisión (CAPT) asesora sobre la compatibilidad del plan de expansión con el desarrollo eficiente del sistema.',reference:'Referencia: Minenergía, 2024.'}
+ ];
+ const nav=[...document.querySelectorAll('.nav-btn')], title=document.getElementById('title'), kicker=document.getElementById('kicker'), description=document.getElementById('description'), reference=document.getElementById('reference'), symbol=document.getElementById('symbol'), progress=document.getElementById('progress'), dots=document.getElementById('dots'), prev=document.getElementById('prev'), next=document.getElementById('next'), panel=document.getElementById('detail');
+ let current=0;
+ data.forEach((d,i)=>{const b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.type='button';b.setAttribute('aria-label','Ver '+d.title);b.addEventListener('click',()=>show(i));dots.appendChild(b)});
+ function show(i){
+  current=(i+data.length)%data.length;const d=data[current];
+  title.textContent=d.title;kicker.textContent=d.kicker;description.textContent=d.description;reference.textContent=d.reference;symbol.innerHTML=d.icon;
+  progress.textContent=String(current+1).padStart(2,'0')+' / '+String(data.length).padStart(2,'0');
+  nav.forEach((b,j)=>{b.setAttribute('aria-selected',String(j===current));b.tabIndex=j===current?0:-1});
+  [...dots.children].forEach((b,j)=>b.classList.toggle('active',j===current));
+  prev.disabled=current===0;next.disabled=current===data.length-1;
+  panel.style.animation='none';void panel.offsetWidth;panel.style.animation='panelIn .35s ease both';
+ }
+ nav.forEach((b,i)=>b.addEventListener('click',()=>show(i)));
+ prev.addEventListener('click',()=>show(Math.max(0,current-1)));
+ next.addEventListener('click',()=>show(Math.min(data.length-1,current+1)));
+ nav.forEach((b,i)=>b.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();nav[(i+1)%nav.length].focus();show((i+1)%nav.length)}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();nav[(i-1+nav.length)%nav.length].focus();show((i-1+nav.length)%nav.length)}}));
+ show(0);
+})();
+</script>
+</body>
+</html>
