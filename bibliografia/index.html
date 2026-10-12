@@ -75,6 +75,22 @@ body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:c
 const filter=document.getElementById('filter'),items=[...document.querySelectorAll('.item')],count=document.getElementById('count'),empty=document.getElementById('empty');
 function update(){const q=filter.value.trim().toLocaleLowerCase('es');let n=0;items.forEach(el=>{const show=el.innerText.toLocaleLowerCase('es').includes(q);el.hidden=!show;if(show)n++});count.textContent=n+' de '+items.length+' referencias';empty.style.display=n?'none':'block'}
 filter.addEventListener('input',update);
+
+// Enlaces externos: intentar abrir una pestaña nueva desde el clic del usuario.
+// Si el entorno embebido bloquea esa apertura, navegar en el contexto actual como alternativa.
+document.querySelectorAll('.item a.link').forEach(link=>{
+  link.addEventListener('click',event=>{
+    event.preventDefault();
+    event.stopPropagation();
+    const url=link.href;
+    let opened=null;
+    try { opened=window.open(url,'_blank','noopener,noreferrer'); } catch(e) {}
+    if (!opened) {
+      // Fallback para iframes que bloquean ventanas emergentes.
+      window.location.assign(url);
+    }
+  });
+});
 document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const url=btn.dataset.url;try{await navigator.clipboard.writeText(url);btn.textContent='¡Copiada!';setTimeout(()=>btn.textContent='Copiar URL',1400)}catch(e){const t=document.createElement('textarea');t.value=url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');btn.textContent='¡Copiada!';setTimeout(()=>btn.textContent='Copiar URL',1400)}catch(_){btn.textContent='Seleccione el enlace'}t.remove()}}));
 document.getElementById('replay').addEventListener('click',()=>{const els=[...document.querySelectorAll('.item:not([hidden])')];const headers=[...document.querySelectorAll('.itemhead')];[...els,...headers].forEach(e=>e.style.animation='none');void document.body.offsetWidth;requestAnimationFrame(()=>{els.forEach(e=>e.style.animation='');headers.forEach(e=>e.style.animation='')})});
 </script>
