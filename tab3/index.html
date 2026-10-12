@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipos de usuarios del sistema eléctrico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#44113C;--plum2:#68245D;--pale:#F5ECF4;--ink:#211D22;--muted:#766D76;--line:#E8E2E7}
+*{box-sizing:border-box}
+html{margin:0;padding:0}
+body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.wrap{width:100%;max-width:1500px;margin:auto;padding:clamp(10px,1.6vw,20px);flex:0 1 auto}
+.table-shell{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 28px rgba(48,24,45,.06)}
+table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0}
+thead th{background:var(--plum);color:#fff;text-align:left;font-size:clamp(11px,1.08vw,15px);font-weight:600;line-height:1.5;padding:16px 14px;border-right:1px solid rgba(255,255,255,.3);opacity:0;transform:translateY(-10px);animation:headIn .55s ease forwards;animation-delay:var(--hd,0s)}
+thead th:first-child{border-top-left-radius:12px}thead th:last-child{border-right:0;border-top-right-radius:12px}
+tbody tr{opacity:0;transform:translateY(12px);animation:rowIn .55s ease forwards;animation-delay:var(--d,0s);transition:background .2s}
+tbody tr:nth-child(odd){background:#F4F4F4}tbody tr:nth-child(even){background:#fff}tbody tr:hover{background:var(--pale)}
+tbody td{vertical-align:top;padding:17px 14px;border-right:1px solid #fff;border-top:1px solid #fff;font-size:clamp(12px,1.12vw,16px);line-height:1.8;overflow-wrap:anywhere}
+tbody td:last-child{border-right:0}
+tbody td:first-child{font-weight:600;color:var(--plum)}
+.demand{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--pale);color:var(--plum);font-weight:600;white-space:nowrap;font-size:.92em}
+.controls{display:flex;justify-content:center;margin-top:14px}
+button.replay{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;background:var(--plum);color:#fff;padding:11px 18px;font:600 12px 'Poppins',Arial,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(68,17,60,.16);transition:transform .2s,background .2s}
+button.replay:hover{background:var(--plum2);transform:translateY(-2px)}button.replay:focus-visible{outline:3px solid #BFA0BA;outline-offset:4px}
+button.replay svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes headIn{to{opacity:1;transform:translateY(0)}}@keyframes rowIn{to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ body{min-height:100vh;align-items:center}
+ .wrap{padding:8px}
+ .table-shell{border:0;box-shadow:none;background:transparent;overflow:visible}
+ table,tbody{display:block;width:100%}thead{display:none}
+ tbody{display:grid;grid-template-columns:1fr;gap:12px}
+ tbody tr{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff!important;box-shadow:0 5px 18px rgba(48,24,45,.05)}
+ tbody td{padding:12px;border-right:1px solid #eee;font-size:12px;line-height:1.65}
+ tbody td::before{content:attr(data-label);display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:5px}
+ tbody td:last-child{grid-column:1/-1;border-top:1px solid #eee}
+ tbody td:first-child{font-size:13px;background:var(--pale)}
+ .demand{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="table-shell">
+  <table aria-label="Clasificación de usuarios del sistema eléctrico colombiano">
+   <colgroup><col style="width:18%"><col style="width:25%"><col style="width:14%"><col style="width:25%"><col style="width:18%"></colgroup>
+   <thead><tr><th style="--hd:.05s">Tipo de usuario</th><th style="--hd:.11s">Criterios de clasificación</th><th style="--hd:.17s">% Demanda total</th><th style="--hd:.23s">Características tarifarias</th><th style="--hd:.29s">Libertad comercial</th></tr></thead>
+   <tbody>
+    <tr style="--d:.12s"><td data-label="Tipo de usuario">Regulados</td><td data-label="Criterios de clasificación">Demanda &lt; 0.1 MW o consumo &lt; 55 MWh/mes</td><td data-label="% Demanda total"><span class="demand">~68 %</span></td><td data-label="Características tarifarias">Tarifas establecidas por CREG</td><td data-label="Libertad comercial">No pueden elegir comercializador</td></tr>
+    <tr style="--d:.24s"><td data-label="Tipo de usuario">No regulados</td><td data-label="Criterios de clasificación">Demanda ≥ 0.1 MW o consumo ≥ 55 MWh/mes (6 meses consecutivos)</td><td data-label="% Demanda total"><span class="demand">~32 %</span></td><td data-label="Características tarifarias">Precios negociados libremente</td><td data-label="Libertad comercial">Pueden elegir comercializador</td></tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="controls"><button class="replay" id="replay" type="button"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M19 12a7.5 7.5 0 1 1-2-5.1L20 12"/></svg>Volver a ver la animación</button></div>
+</main>
+<script>
+(function(){
+ const heads=[...document.querySelectorAll('thead th')],rows=[...document.querySelectorAll('tbody tr')];
+ document.getElementById('replay').addEventListener('click',()=>{
+  [...heads,...rows].forEach(el=>{el.style.animation='none';el.style.opacity='0'});
+  void document.body.offsetWidth;
+  requestAnimationFrame(()=>{
+   heads.forEach(el=>{el.style.animation='';el.style.opacity='';});
+   rows.forEach(el=>{el.style.animation='';el.style.opacity='';});
+  });
+ });
+})();
+</script>
+</body>
+</html>
