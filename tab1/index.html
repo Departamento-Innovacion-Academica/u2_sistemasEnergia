@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades del sector eléctrico colombiano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#44113C;--plum2:#68245D;--soft:#F5ECF4;--line:#E9E3E8;--ink:#211D22;--muted:#716773}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--ink);font-family:'Poppins',sans-serif}
+.wrap{max-width:1450px;margin:auto;padding:clamp(10px,2vw,22px)}
+.topbar{display:flex;justify-content:flex-end;align-items:center;margin-bottom:13px}
+.hint{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:7px;text-align:right}
+.hint svg{width:16px;height:16px;stroke:var(--plum);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.table-shell{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 28px rgba(48,24,45,.06)}
+table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed}
+thead th{background:var(--plum);color:#fff;text-align:left;font-size:clamp(12px,1.2vw,16px);font-weight:600;line-height:1.4;padding:19px 17px;border-right:1px solid rgba(255,255,255,.28);opacity:0;transform:translateY(-12px);animation:headerIn .6s cubic-bezier(.2,.75,.25,1) forwards;animation-delay:var(--hd,0s)}
+thead th:first-child{border-top-left-radius:12px}
+thead th:last-child{border-right:0;border-top-right-radius:12px}
+tbody tr{opacity:0;transform:translateY(12px);animation:rowIn .55s ease forwards;animation-delay:var(--d,0s);transition:background .2s}
+tbody tr:nth-child(odd){background:#F4F4F4}
+tbody tr:nth-child(even){background:#fff}
+tbody tr:hover{background:#F5ECF4}
+tbody td{vertical-align:top;padding:20px 17px;border-right:1px solid #fff;border-top:1px solid #fff;font-size:clamp(12px,1.15vw,16px);line-height:1.8;overflow-wrap:anywhere}
+tbody td:last-child{border-right:0}
+tbody td:first-child{font-weight:600;color:var(--plum)}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;background:#F5ECF4;color:var(--plum);font-size:11px;font-weight:600;line-height:1.4}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.company{font-weight:500}
+.count{font-variant-numeric:tabular-nums;font-weight:600}
+.controls{display:flex;justify-content:center;margin-top:15px}
+button{display:inline-flex;align-items:center;gap:9px;border:0;border-radius:999px;background:var(--plum);color:#fff;padding:11px 17px;font:600 12px 'Poppins',sans-serif;cursor:pointer;box-shadow:0 5px 15px rgba(68,17,60,.16);transition:transform .2s,background .2s}
+button:hover{background:var(--plum2);transform:translateY(-2px)}
+button:focus-visible{outline:3px solid #C8A9C4;outline-offset:3px}
+button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes rowIn{to{opacity:1;transform:translateY(0)}}
+@keyframes headerIn{to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ .wrap{padding:8px}
+ .table-shell{overflow:visible;border:0;box-shadow:none;background:transparent}
+ table,tbody{display:block;width:100%}
+ thead{display:none}
+ tbody{display:grid;grid-template-columns:1fr;gap:12px}
+ tbody tr{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff!important;box-shadow:0 5px 18px rgba(48,24,45,.05)}
+ tbody td{padding:12px;border-right:1px solid #eee;font-size:12px;line-height:1.65}
+ tbody td::before{content:attr(data-label);display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:5px}
+ tbody td:last-child{grid-column:1/-1;border-top:1px solid #eee}
+ tbody td:first-child{font-size:13px;background:#F5ECF4}
+ .pill{font-size:10px;padding:5px 8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="table-shell">
+  <table aria-label="Actividades del sector eléctrico colombiano">
+    <colgroup><col style="width:20%"><col style="width:16%"><col style="width:20%"><col style="width:20%"><col style="width:24%"></colgroup>
+    <thead><tr><th style="--hd:.08s">Actividad</th><th style="--hd:.16s">Agentes 2024</th><th style="--hd:.24s">Tipo de Mercado</th><th style="--hd:.32s">Empresa líder</th><th style="--hd:.40s">Descripción</th></tr></thead>
+    <tbody>
+      <tr style="--d:.1s"><td data-label="Actividad">Generación</td><td data-label="Agentes 2024"><span class="count">134</span></td><td data-label="Tipo de Mercado"><span class="pill">Competitivo</span></td><td data-label="Empresa líder"><span class="company">Enel Colombia, EPM</span></td><td data-label="Descripción">Producción de energía eléctrica mediante diferentes tecnologías.</td></tr>
+      <tr style="--d:.22s"><td data-label="Actividad">Transmisión</td><td data-label="Agentes 2024"><span class="count">15</span></td><td data-label="Tipo de Mercado"><span class="pill">Monopolio natural</span></td><td data-label="Empresa líder"><span class="company">ISA (75 % participación)</span></td><td data-label="Descripción">Transporte de energía a tensiones ≥220 kV.</td></tr>
+      <tr style="--d:.34s"><td data-label="Actividad">Distribución</td><td data-label="Agentes 2024"><span class="count">38</span></td><td data-label="Tipo de Mercado"><span class="pill">Monopolio natural por zonas</span></td><td data-label="Empresa líder"><span class="company">Codensa, EPM, GEB</span></td><td data-label="Descripción">Distribución local a tensiones &lt;220 kV.</td></tr>
+      <tr style="--d:.46s"><td data-label="Actividad">Comercialización</td><td data-label="Agentes 2024"><span class="count">138</span></td><td data-label="Tipo de Mercado"><span class="pill">Competitivo</span></td><td data-label="Empresa líder"><span class="company">Codensa, EPM, Celsia</span></td><td data-label="Descripción">Compra mayorista, facturación y atención al cliente.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="controls"><button id="replay" type="button"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M19 12a7.5 7.5 0 1 1-2-5.1L20 12"/></svg>Volver a ver la animación</button></div>
+</main>
+<script>
+(function(){
+ const rows=[...document.querySelectorAll('tbody tr')];
+ const headers=[...document.querySelectorAll('thead th')];
+ document.getElementById('replay').addEventListener('click',()=>{
+   [...headers,...rows].forEach(el=>el.style.animation='none');
+   void document.body.offsetWidth;
+   requestAnimationFrame(()=>{
+     headers.forEach(el=>el.style.animation='');
+     rows.forEach(el=>el.style.animation='');
+   });
+ });
+})();
+</script>
+</body>
+</html>
